@@ -96,13 +96,6 @@ h1 {
   transform: translateY(100%);
 }
 
-.background-image {
-  background-image: url("../public/images/background-image.png");
-  background-color: rgba(255, 255, 255, 0.95);
-  background-blend-mode: lighten;
-  background-size: cover;
-}
-
 .user-select-none {
   -webkit-user-select: none;
   -moz-user-select: none;
