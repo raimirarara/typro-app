@@ -11,6 +11,7 @@ const Submit = () => {
   const [language, setLanguage] = useState("");
   const [src, setSrc] = useState("");
   const [output, setOutput] = useState("");
+  const [dissatisfaction, setDissatisfaction] = useState("");
 
   // バリデーション
   const validateRequiredInput = (...args: any) => {
@@ -42,6 +43,12 @@ const Submit = () => {
     },
     [setOutput]
   );
+  const inputDissatisfaction = useCallback(
+    (event) => {
+      setDissatisfaction(event.target.value);
+    },
+    [setDissatisfaction]
+  );
 
   const submitForm = () => {
     const isBlank = validateRequiredInput(language, src, output);
@@ -69,7 +76,10 @@ const Submit = () => {
           src +
           "\n" +
           "output: \n" +
-          output,
+          output +
+          "\n" +
+          "dissatisfaction: \n" +
+          dissatisfaction,
       };
 
       const url = process.env.NEXT_PUBLIC_SLACK_WEBHOOK_API;
@@ -84,6 +94,7 @@ const Submit = () => {
           setSrc("");
           setOutput("");
           setLanguage("");
+          setDissatisfaction("");
         });
       } else {
         alert("大変申し訳ございません。エラー復旧までしばらくお持ちください。");
@@ -129,6 +140,18 @@ const Submit = () => {
             type={"description"}
             required={true}
             onChange={inputOutput}
+          />
+        </div>
+        <div className="mt-8">
+          <CommonInput
+            fullWidth={true}
+            label={"要望、不満点等がありましたら、お書きください"}
+            multiline={false}
+            rows={1}
+            value={dissatisfaction}
+            type={"dissatisfaction"}
+            required={false}
+            onChange={inputDissatisfaction}
           />
         </div>
         <div className="mt-8 text-center">
