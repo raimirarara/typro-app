@@ -22,7 +22,7 @@ import {
 import { db } from "../../../firebase/firebase";
 import { getUser } from "../../../../redux/slices/userSlice";
 import Stamp from "../../../components/organisms/Stamp";
-import ITyped from "../../../firebase/ityped";
+import ITyped from "../../../components/organisms/ityped";
 
 const CoopOutput = () => {
   const dispatch = useDispatch();

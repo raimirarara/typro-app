@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useSelector } from "react-redux";
 import { getUser } from "../../redux/slices/userSlice";
 import { PlayButton } from "../components/atoms";
-import ITyped from "../firebase/ityped";
+import ITyped from "../components/organisms/ityped";
 import Router from "next/router";
 import Image from "next/image";
 import BackgroundImage from "../../public/images/background-image.png";

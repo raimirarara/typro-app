@@ -15,7 +15,7 @@ import Keybord from "../../../public/audios/keybord.mp3";
 import DisplayQ2 from "../../../public/audios/displayquestion2.mp3";
 import Miss from "../../../public/audios/miss.mp3";
 import Success from "../../../public/audios/success.mp3";
-import ITyped from "../../firebase/ityped";
+import ITyped from "../../components/organisms/ityped";
 
 const Output = () => {
   const dispatch = useDispatch();
